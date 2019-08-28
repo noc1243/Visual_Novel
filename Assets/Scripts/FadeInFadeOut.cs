@@ -19,6 +19,14 @@ public class FadeInFadeOut : MonoBehaviour
         roteiro.carregaScriptPosMudancaDeBackground ();
     }
 
+    void OnDisable () {
+        modificadorDeBackground.mudandoBackground = false;
+    }
+
+    void OnEnable () {
+        modificadorDeBackground.mudandoBackground = true;
+    }
+
     // Update is called once per frame
     void Update()
     {

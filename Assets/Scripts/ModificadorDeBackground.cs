@@ -10,10 +10,16 @@ public class ModificadorDeBackground : MonoBehaviour
     private Image background;
     private Sprite spriteAtual;
 
+    public bool mudandoBackground;
+
     // Start is called before the first frame update
     void Start()
     {
         background = gameObject.GetComponent<Image> ();
+    }
+
+    void Awake () {
+        mudandoBackground = false;
     }
 
     public void atualizaBackground () {
@@ -25,9 +31,9 @@ public class ModificadorDeBackground : MonoBehaviour
         spriteAtual = sprite;
     }
 
+
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

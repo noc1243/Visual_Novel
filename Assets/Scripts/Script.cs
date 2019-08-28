@@ -11,24 +11,26 @@ public class Script
     public string personagens;
     public string [] escolha;
     public string [] rota;
+    public string gameOver;
 
 
-    public Script (string id, string texto, string background, string musica, string efeito, string personagens, string escolha1, string escolha2, string escolha3, string rota1, string rota2, string rota3) {
+    public Script (string id, string texto, string background, string musica, string efeito, string personagens, string escolha1, string escolha2, string escolha3, string rota1, string rota2, string rota3, string gameOver) {
         escolha = new string [3];
         rota = new string [3];
 
 
         this.id = id;
-        this.texto = texto;
-        this.background = background;
-        this.musica = musica;
-        this.efeito = efeito;
-        this.personagens = personagens;
-        this.escolha [0] = escolha1;
-        this.escolha [1] = escolha2;
-        this.escolha [2] = escolha3;
-        this.rota [0] = rota1;
-        this.rota [1] = rota2;
-        this.rota [2] = rota3;
+        this.texto = texto.Trim();
+        this.background = background.Trim();
+        this.musica = musica.Trim();
+        this.efeito = efeito.Trim();
+        this.personagens = personagens.Trim();
+        this.escolha [0] = escolha1.Trim();
+        this.escolha [1] = escolha2.Trim();
+        this.escolha [2] = escolha3.Trim();
+        this.rota [0] = rota1.Trim();
+        this.rota [1] = rota2.Trim();
+        this.rota [2] = rota3.Trim();
+        this.gameOver = gameOver.Trim();
     }
 }

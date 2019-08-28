@@ -55,11 +55,14 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AutoDeactivate.cs" />
      <Compile Include="Assets\Scripts\FadeInFadeOut.cs" />
+     <Compile Include="Assets\Scripts\GameOverUI.cs" />
      <Compile Include="Assets\Scripts\ModificadorDeBackground.cs" />
      <Compile Include="Assets\Scripts\ModificadorDeMusica.cs" />
      <Compile Include="Assets\Scripts\ModificadorDeTexto.cs" />
      <Compile Include="Assets\Scripts\Roteiro.cs" />
+     <Compile Include="Assets\Scripts\SaveButtonController.cs" />
      <Compile Include="Assets\Scripts\Script.cs" />
+     <Compile Include="Assets\Scripts\TitleScreenUI.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>G:/Noc/workspace/Visual_Novel/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
@@ -633,6 +636,10 @@
  <Reference Include="System.Xml.Serialization">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{47646882-9BC9-FC22-C1BA-601838A29819}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
