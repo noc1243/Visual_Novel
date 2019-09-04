@@ -147,7 +147,7 @@ public class Roteiro : MonoBehaviour {
 
     private void carregaPersonagens (Script script) {
         if (!String.IsNullOrEmpty (script.apareceDireita)) {
-            if (script.apareceDireita.Contains ("true")) {
+            if (script.apareceDireita.ToLower().Contains ("true")) {
                 this.personagemDireitaAtual = script.personagemDireita;
                 modificadorDePersonagem.mudaPersonagemDireita (Resources.Load<Sprite> (this.personagemFolderPath + script.personagemDireita));
             } else {
@@ -156,7 +156,7 @@ public class Roteiro : MonoBehaviour {
             }
         }
         if (!String.IsNullOrEmpty (script.apareceEsquerda)) {
-            if (script.apareceEsquerda.Contains ("true")) {
+            if (script.apareceEsquerda.ToLower().Contains ("true")) {
                 this.personagemEsquerdaAtual = script.personagemEsquerda;
                 modificadorDePersonagem.mudaPersonagemEsquerda (Resources.Load<Sprite> (this.personagemFolderPath + script.personagemEsquerda));
             } else {
@@ -174,6 +174,7 @@ public class Roteiro : MonoBehaviour {
         }
 
         if (!String.IsNullOrEmpty (personagemEsquerda)) {
+            Debug.Log ("Carregando Personagem!!");
             modificadorDePersonagem.mudaPersonagemEsquerda (Resources.Load<Sprite> (this.personagemFolderPath + personagemEsquerda));
         } else {
             modificadorDePersonagem.escondePersonagemEsquerda ();
@@ -188,11 +189,7 @@ public class Roteiro : MonoBehaviour {
             return;
         }
 
-        carregaMusica (scriptASerExibido);
-        destroiMusica (scriptASerExibido);
-        carregaPersonagens (scriptASerExibido);
-        verificaEscolhasECarregaOpcoes ();
-        modificadorDeTexto.mudaTextoASerExibido (scriptASerExibido.texto);
+        carregaScriptPosMudancaDeBackground ();
     }
 
     private void loadCarregaScript () {
@@ -208,10 +205,7 @@ public class Roteiro : MonoBehaviour {
             return;
         }
 
-        carregaMusica (musica);
-        carregaPersonagens (personagemDireita, personagemEsquerda);
-        verificaEscolhasECarregaOpcoes ();
-        modificadorDeTexto.mudaTextoASerExibido (scriptASerExibido.texto);
+        carregaScriptPosMudancaDeBackground ();
     }
 
     private void carregaButoes () {
@@ -248,7 +242,7 @@ public class Roteiro : MonoBehaviour {
     }
 
     private void verificaEPassaDeScript () {
-        if (Input.GetButtonDown ("Enter") && String.IsNullOrEmpty (scriptASerExibido.escolha[0]) && !modificadorDeBackground.mudandoBackground) {
+        if (Input.GetButtonDown ("Enter") && String.IsNullOrEmpty (scriptASerExibido.escolha[0]) && !modificadorDeBackground.mudandoBackground && !seletorDeEscolhas3.active && !seletorDeEscolhas2.active) {
             if (!String.IsNullOrEmpty (scriptASerExibido.gameOver)) {
                 gameOver ();
             }
