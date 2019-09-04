@@ -13,10 +13,12 @@ public class Roteiro : MonoBehaviour {
     [SerializeField] private GameObject seletorDeEscolhas3;
     [SerializeField] private GameObject seletorDeEscolhas2;
     [SerializeField] private ModificadorDeTexto modificadorDeTexto;
+    [SerializeField] private ModificadorDePersonagem modificadorDePersonagem;
 
     private string roteiroFolderPath = "Roteiro/";
     private string backgroundFolderPath = "Backgrounds/";
     private string musicaFolderPath = "Musicas/";
+    private string personagemFolderPath = "Personagens/";
     private List<Script> scripts;
     private int idAtual;
 
@@ -27,6 +29,8 @@ public class Roteiro : MonoBehaviour {
 
     private String imagemAtual;
     private String musicaAtual;
+    private String personagemDireitaAtual;
+    private String personagemEsquerdaAtual;
 
     private bool loadingGame;
 
@@ -48,7 +52,7 @@ public class Roteiro : MonoBehaviour {
 
             string[] colunas = linha.Split (new string[] { this.CSV_SEPARATOR }, StringSplitOptions.None);
 
-            scripts.Add (new Script (colunas[0], colunas[1], colunas[2], colunas[3], colunas[4], colunas[5], colunas[6], colunas[7], colunas[8], colunas[9], colunas[10], colunas[11], colunas[12]));
+            scripts.Add (new Script (colunas[0], colunas[1], colunas[2], colunas[3], colunas[4], colunas[5], colunas[6], colunas[7], colunas[8], colunas[9], colunas[10], colunas[11], colunas[12], colunas[13], colunas[14], colunas[15], colunas[16]));
         }
     }
 
@@ -114,8 +118,10 @@ public class Roteiro : MonoBehaviour {
     public void carregaScriptPosMudancaDeBackground () {
         if (!loadingGame) {
             carregaMusica (scriptASerExibido);
+            carregaPersonagens (scriptASerExibido);
         } else {
             carregaMusica (PlayerPrefs.GetString ("Musica", musicaAtual));
+            carregaPersonagens (PlayerPrefs.GetString ("PersonagemDireita", ""), PlayerPrefs.GetString ("PersonagemEsquerda", ""));
             loadingGame = false;
         }
         verificaEscolhasECarregaOpcoes ();
@@ -124,6 +130,41 @@ public class Roteiro : MonoBehaviour {
 
     private bool verificaSeEstaMudandoDeBackground () {
         return modificadorDeBackground.fadeInFadeout.active;
+    }
+
+    private void carregaPersonagens (Script script) {
+        if (!String.IsNullOrEmpty (script.apareceDireita)) {
+            if (script.apareceDireita.Contains ("true")) {
+                this.personagemDireitaAtual = script.personagemDireita;
+                modificadorDePersonagem.mudaPersonagemDireita (Resources.Load<Sprite> (this.personagemFolderPath + script.personagemDireita));
+            } else {
+                this.personagemDireitaAtual = "";
+                modificadorDePersonagem.escondePersonagemDireita ();
+            }
+        }
+        if (!String.IsNullOrEmpty (script.apareceEsquerda)) {
+            if (script.apareceEsquerda.Contains ("true")) {
+                this.personagemEsquerdaAtual = script.personagemEsquerda;
+                modificadorDePersonagem.mudaPersonagemEsquerda (Resources.Load<Sprite> (this.personagemFolderPath + script.personagemEsquerda));
+            } else {
+                this.personagemEsquerdaAtual = "";
+                modificadorDePersonagem.escondePersonagemEsquerda ();
+            }
+        }
+    }
+
+    private void carregaPersonagens (string personagemDireita, string personagemEsquerda) {
+        if (!String.IsNullOrEmpty (personagemDireita)) {
+            modificadorDePersonagem.mudaPersonagemDireita (Resources.Load<Sprite> (this.personagemFolderPath + personagemDireita));
+        } else {
+            modificadorDePersonagem.escondePersonagemDireita ();
+        }
+
+        if (!String.IsNullOrEmpty (personagemEsquerda)) {
+            modificadorDePersonagem.mudaPersonagemEsquerda (Resources.Load<Sprite> (this.personagemFolderPath + personagemEsquerda));
+        } else {
+            modificadorDePersonagem.escondePersonagemEsquerda ();
+        }
     }
 
     private void carregaScript () {
@@ -135,6 +176,7 @@ public class Roteiro : MonoBehaviour {
         }
 
         carregaMusica (scriptASerExibido);
+        carregaPersonagens (scriptASerExibido);
         verificaEscolhasECarregaOpcoes ();
         modificadorDeTexto.mudaTextoASerExibido (scriptASerExibido.texto);
     }
@@ -144,7 +186,8 @@ public class Roteiro : MonoBehaviour {
         
         String imagem = PlayerPrefs.GetString ("Imagem");
         String musica = PlayerPrefs.GetString ("Musica");
-
+        String personagemDireita = PlayerPrefs.GetString ("PersonagemDireita", "");
+        String personagemEsquerda = PlayerPrefs.GetString ("PersonagemEsquerda", "");
 
         carregaImagem (imagem);
         if (verificaSeEstaMudandoDeBackground ()) {
@@ -152,6 +195,7 @@ public class Roteiro : MonoBehaviour {
         }
 
         carregaMusica (musica);
+        carregaPersonagens (personagemDireita, personagemEsquerda);
         verificaEscolhasECarregaOpcoes ();
         modificadorDeTexto.mudaTextoASerExibido (scriptASerExibido.texto);
     }
@@ -208,6 +252,8 @@ public class Roteiro : MonoBehaviour {
         PlayerPrefs.SetInt ("LinhaAtual", idAtual);
         PlayerPrefs.SetString ("Imagem", imagemAtual);
         PlayerPrefs.SetString ("Musica", musicaAtual);
+        PlayerPrefs.SetString ("PersonagemDireita", personagemDireitaAtual);
+        PlayerPrefs.SetString ("PersonagemEsquerda", personagemEsquerdaAtual);
     }
 
     // Update is called once per frame

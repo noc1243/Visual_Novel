@@ -1,0 +1,10 @@
+id;_;texto;_;backghround;_;musica;_;efeito;_;personagens;_;escolha1;_;escolha2;_;escolha3;_;rota1;_;rota2;_;rota3;_;gameover;_;personagemdireita;_;aparecedireita;_;personagemesquerda;_;apareceesquerda
+1;_;texto1 abc def ghi jkl mno pqr stu vwx yz;_;Background Cela;_;Musica1;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;bruxaDaCela;_;true
+2;_;texto2 abc def ghi jkl mno pqr stu vwx yz;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;bruxaDaCela;_;true;_;;_;false
+3;_;texto3 abc def ghi jkl mno pqr stu vwx yz;_;cenario floresta;_;Musica2;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;false;_;;_;
+4;_;texto4 abc def ghi jkl mno pqr stu vwx yz;_;;_;;_;;_;;_;escolha 1;_;escolha 2;_;escolha 3;_;5;_;6;_;7;_;;_;;_;;_;;_;false
+5;_;texto4ESCOLHA1 abc def ghi jkl mno pqr stu vwx yz;_;Casa na floresta teste;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;
+6;_;textoESCOLHA2 abc def ghi jkl mno pqr stu vwx yz;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;
+7;_;textoESCOLHA3 abc def ghi jkl mno pqr stu vwx yz;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;
+8;_;texto8 abc def ghi jkl mno pqr stu vwx yz;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;
+9;_;texto9 abc def ghi jkl mno pqr stu vwx yz;_;Cena da fogueira teste;_;;_;;_;;_;;_;;_;;_;;_;;_;;_;true;_;;_;;_;;_;

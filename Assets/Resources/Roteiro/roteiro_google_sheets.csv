@@ -1,0 +1,10 @@
+﻿id,texto,backghround,musica,efeito,personagens,escolha1,escolha2,escolha3,rota1,rota2,rota3,gameover,personagemdireita,aparecedireita,personagemesquerda,apareceesquerda
+1,texto1 abc def ghi jkl mno pqr stu vwx yz,Background Cela,Musica1,,,,,,,,,,,,bruxaDaCela,true
+2,texto2 abc def ghi jkl mno pqr stu vwx yz,,,,,,,,,,,,bruxaDaCela,true,,false
+3,texto3 abc def ghi jkl mno pqr stu vwx yz,cenario floresta,Musica2,,,,,,,,,,,false,,
+4,texto4 abc def ghi jkl mno pqr stu vwx yz,,,,,escolha 1,escolha 2,escolha 3,5,6,7,,,,,false
+5,texto4ESCOLHA1 abc def ghi jkl mno pqr stu vwx yz,Casa na floresta teste,,,,,,,,,,,,,,
+6,textoESCOLHA2 abc def ghi jkl mno pqr stu vwx yz,,,,,,,,,,,,,,,
+7,textoESCOLHA3 abc def ghi jkl mno pqr stu vwx yz,,,,,,,,,,,,,,,
+8,texto8 abc def ghi jkl mno pqr stu vwx yz,,,,,,,,,,,,,,,
+9,texto9 abc def ghi jkl mno pqr stu vwx yz,Cena da fogueira teste,,,,,,,,,,true,,,,

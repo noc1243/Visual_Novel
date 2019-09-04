@@ -12,10 +12,408 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
+  EditorBanks:
+  - {fileID: 114654629217539876}
+  - {fileID: 114501893404740952}
+  EditorEvents:
+  - {fileID: 114678929714234848}
+  - {fileID: 114129129183120554}
+  - {fileID: 114001365464681134}
+  - {fileID: 114915595271539410}
+  - {fileID: 114400469232581406}
+  - {fileID: 114093319869652216}
+  - {fileID: 114434484142292884}
+  - {fileID: 114079987332273766}
+  - {fileID: 114207312321760614}
+  - {fileID: 114384458155338336}
+  - {fileID: 114198465810219038}
+  - {fileID: 114175592547521538}
+  - {fileID: 114095888491629232}
+  - {fileID: 114545202418942988}
   EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
-  stringsBankWriteTime: 0
+  MasterBanks:
+  - {fileID: 114501893404740952}
+  StringsBanks:
+  - {fileID: 114654629217539876}
+  stringsBankWriteTime: 637019306719904741
   cacheVersion: 3
+--- !u!114 &114001365464681134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/EFX/Confirma
+  m_EditorClassIdentifier: 
+  Path: event:/EFX/Confirma
+  guid: 6d990bc97aacd142a09186dfc5c5aedc
+  Banks:
+  - {fileID: 114501893404740952}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1500
+--- !u!114 &114079987332273766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/EFX/Tempo Esgotando
+  m_EditorClassIdentifier: 
+  Path: event:/EFX/Tempo Esgotando
+  guid: ad6530418d0b1f438a37e5ba5a0d2d81
+  Banks:
+  - {fileID: 114501893404740952}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 11482
+--- !u!114 &114093319869652216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Finais/Fogueira
+  m_EditorClassIdentifier: 
+  Path: event:/Finais/Fogueira
+  guid: 91b01ffa62b0fa40a1f28cddc08f676e
+  Banks:
+  - {fileID: 114501893404740952}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 62000
+--- !u!114 &114095888491629232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Finais/Sempre Fugindo
+  m_EditorClassIdentifier: 
+  Path: event:/Finais/Sempre Fugindo
+  guid: fca6faa3040fd74f8ae1a1ab00ca250b
+  Banks:
+  - {fileID: 114501893404740952}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114129129183120554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Cen\xE1rios/Casa Interno"
+  m_EditorClassIdentifier: 
+  Path: "event:/Cen\xE1rios/Casa Interno"
+  guid: 364dcc2e4c4f564caaa0f84aa6a7db48
+  Banks:
+  - {fileID: 114501893404740952}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 62323
+--- !u!114 &114175592547521538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Cen\xE1rios/Pris\xE3o"
+  m_EditorClassIdentifier: 
+  Path: "event:/Cen\xE1rios/Pris\xE3o"
+  guid: fc8387f69092a74b99b91f425a52a5fb
+  Banks:
+  - {fileID: 114501893404740952}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 114200524467633014}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 68698
+--- !u!114 &114198465810219038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Cen\xE1rios/Vila"
+  m_EditorClassIdentifier: 
+  Path: "event:/Cen\xE1rios/Vila"
+  guid: e6ade42dfa964b48a4a804b7c77f7077
+  Banks:
+  - {fileID: 114501893404740952}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114200524467633014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Pris\xE3o/Parameter 1"
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &114207312321760614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/EFX/Cancela
+  m_EditorClassIdentifier: 
+  Path: event:/EFX/Cancela
+  guid: bdde8f08bb44b54eb99a8b52baa4adc8
+  Banks:
+  - {fileID: 114501893404740952}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &114384458155338336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Cen\xE1rios/Efermidade"
+  m_EditorClassIdentifier: 
+  Path: "event:/Cen\xE1rios/Efermidade"
+  guid: e2f207fc80524c448989d685cf79d991
+  Banks:
+  - {fileID: 114501893404740952}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114400469232581406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Cen\xE1rios/Casa Externo"
+  m_EditorClassIdentifier: 
+  Path: "event:/Cen\xE1rios/Casa Externo"
+  guid: 8732973a3e8f1b4981a795f30476090b
+  Banks:
+  - {fileID: 114501893404740952}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114434484142292884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/EFX/Cursor
+  m_EditorClassIdentifier: 
+  Path: event:/EFX/Cursor
+  guid: 9cc040035edd2b48aefc85f07f32eb8c
+  Banks:
+  - {fileID: 114501893404740952}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 290
+--- !u!114 &114501893404740952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: G:/Noc/workspace/PPG VI Trilha/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637019306719854869
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 8926400
+  Exists: 1
+--- !u!114 &114545202418942988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Finais/Comunidade
+  m_EditorClassIdentifier: 
+  Path: event:/Finais/Comunidade
+  guid: fe2f43e3650e8c4fa567e5abfb3cb4a7
+  Banks:
+  - {fileID: 114501893404740952}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114654629217539876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: G:/Noc/workspace/PPG VI Trilha/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637019306719904741
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1416
+  Exists: 1
+--- !u!114 &114678929714234848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Finais/Floresta Queimada
+  m_EditorClassIdentifier: 
+  Path: event:/Finais/Floresta Queimada
+  guid: 23465b80cf8d364a9083f3812f5fcff4
+  Banks:
+  - {fileID: 114501893404740952}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114915595271539410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Cen\xE1rios/Floresta"
+  m_EditorClassIdentifier: 
+  Path: "event:/Cen\xE1rios/Floresta"
+  guid: 7c9a29b0106dd246acbe6d1227273bf0
+  Banks:
+  - {fileID: 114501893404740952}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 300629

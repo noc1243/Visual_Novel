@@ -12,9 +12,13 @@ public class Script
     public string [] escolha;
     public string [] rota;
     public string gameOver;
+    public string personagemDireita;
+    public string apareceDireita;
+    public string personagemEsquerda;
+    public string apareceEsquerda;
 
 
-    public Script (string id, string texto, string background, string musica, string efeito, string personagens, string escolha1, string escolha2, string escolha3, string rota1, string rota2, string rota3, string gameOver) {
+    public Script (string id, string texto, string background, string musica, string efeito, string personagens, string escolha1, string escolha2, string escolha3, string rota1, string rota2, string rota3, string gameOver, string personagemDireita, string apareceDireita, string personagemEsquerda, string apareceEsquerda) {
         escolha = new string [3];
         rota = new string [3];
 
@@ -32,5 +36,9 @@ public class Script
         this.rota [1] = rota2.Trim();
         this.rota [2] = rota3.Trim();
         this.gameOver = gameOver.Trim();
+        this.personagemDireita = personagemDireita.Trim();
+        this.apareceDireita = apareceDireita.Trim();
+        this.personagemEsquerda = personagemEsquerda.Trim();
+        this.apareceEsquerda = apareceEsquerda.Trim();
     }
 }

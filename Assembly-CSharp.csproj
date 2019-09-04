@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\GameOverUI.cs" />
      <Compile Include="Assets\Scripts\ModificadorDeBackground.cs" />
      <Compile Include="Assets\Scripts\ModificadorDeMusica.cs" />
+     <Compile Include="Assets\Scripts\ModificadorDePersonagem.cs" />
      <Compile Include="Assets\Scripts\ModificadorDeTexto.cs" />
      <Compile Include="Assets\Scripts\Roteiro.cs" />
      <Compile Include="Assets\Scripts\SaveButtonController.cs" />
