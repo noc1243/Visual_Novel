@@ -16,9 +16,10 @@ public class Script
     public string apareceDireita;
     public string personagemEsquerda;
     public string apareceEsquerda;
+    public string musicaASerDestruida;
 
 
-    public Script (string id, string texto, string background, string musica, string efeito, string personagens, string escolha1, string escolha2, string escolha3, string rota1, string rota2, string rota3, string gameOver, string personagemDireita, string apareceDireita, string personagemEsquerda, string apareceEsquerda) {
+    public Script (string id, string texto, string background, string musica, string efeito, string personagens, string escolha1, string escolha2, string escolha3, string rota1, string rota2, string rota3, string gameOver, string personagemDireita, string apareceDireita, string personagemEsquerda, string apareceEsquerda, string musicaASerDestruida) {
         escolha = new string [3];
         rota = new string [3];
 
@@ -40,5 +41,6 @@ public class Script
         this.apareceDireita = apareceDireita.Trim();
         this.personagemEsquerda = personagemEsquerda.Trim();
         this.apareceEsquerda = apareceEsquerda.Trim();
+        this.musicaASerDestruida = musicaASerDestruida.Trim();
     }
 }

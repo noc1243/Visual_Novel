@@ -52,7 +52,7 @@ public class Roteiro : MonoBehaviour {
 
             string[] colunas = linha.Split (new string[] { this.CSV_SEPARATOR }, StringSplitOptions.None);
 
-            scripts.Add (new Script (colunas[0], colunas[1], colunas[2], colunas[3], colunas[4], colunas[5], colunas[6], colunas[7], colunas[8], colunas[9], colunas[10], colunas[11], colunas[12], colunas[13], colunas[14], colunas[15], colunas[16]));
+            scripts.Add (new Script (colunas[0], colunas[1], colunas[2], colunas[3], colunas[4], colunas[5], colunas[6], colunas[7], colunas[8], colunas[9], colunas[10], colunas[11], colunas[12], colunas[13], colunas[14], colunas[15], colunas[16], colunas[17]));
         }
     }
 
@@ -85,14 +85,26 @@ public class Roteiro : MonoBehaviour {
     private void carregaMusica (Script script) {
         if (!String.IsNullOrEmpty (script.musica)) {
             musicaAtual = script.musica;
-            modificadorDeMusica.carregaMusica (Resources.Load<GameObject> (this.musicaFolderPath + script.musica));
+            modificadorDeMusica.carregaMusica (Resources.Load<GameObject> (this.musicaFolderPath + script.musica), script.musica);
         }
     }
 
     private void carregaMusica (String musica) {
         if (!String.IsNullOrEmpty (musica)) {
             musicaAtual = musica;
-            modificadorDeMusica.carregaMusica (Resources.Load<GameObject> (this.musicaFolderPath + musica));
+            modificadorDeMusica.carregaMusica (Resources.Load<GameObject> (this.musicaFolderPath + musica), musica);
+        }
+    }
+
+    private void destroiMusica (Script script) {
+        if (!String.IsNullOrEmpty (script.musicaASerDestruida)) {
+            modificadorDeMusica.destroiMusica (script.musicaASerDestruida);
+        }
+    }
+
+    private void destroiMusica (String musica) {
+        if (!String.IsNullOrEmpty (musica)) {
+            modificadorDeMusica.destroiMusica (musica);
         }
     }
 
@@ -118,6 +130,7 @@ public class Roteiro : MonoBehaviour {
     public void carregaScriptPosMudancaDeBackground () {
         if (!loadingGame) {
             carregaMusica (scriptASerExibido);
+            destroiMusica (scriptASerExibido);
             carregaPersonagens (scriptASerExibido);
         } else {
             carregaMusica (PlayerPrefs.GetString ("Musica", musicaAtual));
@@ -176,6 +189,7 @@ public class Roteiro : MonoBehaviour {
         }
 
         carregaMusica (scriptASerExibido);
+        destroiMusica (scriptASerExibido);
         carregaPersonagens (scriptASerExibido);
         verificaEscolhasECarregaOpcoes ();
         modificadorDeTexto.mudaTextoASerExibido (scriptASerExibido.texto);
