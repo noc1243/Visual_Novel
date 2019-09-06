@@ -26,4 +26,9 @@ public class TitleScreenUI : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
 
     }
+
+    public void goToTitleScreen (int loadOrStart) {
+        SceneManager.LoadScene("TitleScreen");
+
+    }
 }

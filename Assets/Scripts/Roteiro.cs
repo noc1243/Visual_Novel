@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Roteiro : MonoBehaviour {
     [SerializeField] private string roteiro = "roteiro";
@@ -52,7 +52,7 @@ public class Roteiro : MonoBehaviour {
 
             string[] colunas = linha.Split (new string[] { this.CSV_SEPARATOR }, StringSplitOptions.None);
 
-            scripts.Add (new Script (colunas[0], colunas[1], colunas[2], colunas[3], colunas[4], colunas[5], colunas[6], colunas[7], colunas[8], colunas[9], colunas[10], colunas[11], colunas[12], colunas[13], colunas[14], colunas[15], colunas[16], colunas[17]));
+            scripts.Add (new Script (colunas[0], colunas[1], colunas[2], colunas[3], colunas[4], colunas[5], colunas[6], colunas[7], colunas[8], colunas[9], colunas[10], colunas[11], colunas[12], colunas[13], colunas[14], colunas[15], colunas[16], colunas[17], colunas[18]));
         }
     }
 
@@ -147,7 +147,7 @@ public class Roteiro : MonoBehaviour {
 
     private void carregaPersonagens (Script script) {
         if (!String.IsNullOrEmpty (script.apareceDireita)) {
-            if (script.apareceDireita.ToLower().Contains ("true")) {
+            if (script.apareceDireita.ToLower ().Contains ("true")) {
                 this.personagemDireitaAtual = script.personagemDireita;
                 modificadorDePersonagem.mudaPersonagemDireita (Resources.Load<Sprite> (this.personagemFolderPath + script.personagemDireita));
             } else {
@@ -156,7 +156,7 @@ public class Roteiro : MonoBehaviour {
             }
         }
         if (!String.IsNullOrEmpty (script.apareceEsquerda)) {
-            if (script.apareceEsquerda.ToLower().Contains ("true")) {
+            if (script.apareceEsquerda.ToLower ().Contains ("true")) {
                 this.personagemEsquerdaAtual = script.personagemEsquerda;
                 modificadorDePersonagem.mudaPersonagemEsquerda (Resources.Load<Sprite> (this.personagemFolderPath + script.personagemEsquerda));
             } else {
@@ -174,7 +174,6 @@ public class Roteiro : MonoBehaviour {
         }
 
         if (!String.IsNullOrEmpty (personagemEsquerda)) {
-            Debug.Log ("Carregando Personagem!!");
             modificadorDePersonagem.mudaPersonagemEsquerda (Resources.Load<Sprite> (this.personagemFolderPath + personagemEsquerda));
         } else {
             modificadorDePersonagem.escondePersonagemEsquerda ();
@@ -189,12 +188,16 @@ public class Roteiro : MonoBehaviour {
             return;
         }
 
-        carregaScriptPosMudancaDeBackground ();
+        carregaMusica (scriptASerExibido);
+        destroiMusica (scriptASerExibido);
+        carregaPersonagens (scriptASerExibido);
+        verificaEscolhasECarregaOpcoes ();
+        modificadorDeTexto.mudaTextoASerExibido (scriptASerExibido.texto);
     }
 
     private void loadCarregaScript () {
         scriptASerExibido = scripts.Find (x => x.id == this.idAtual.ToString ());
-        
+
         String imagem = PlayerPrefs.GetString ("Imagem");
         String musica = PlayerPrefs.GetString ("Musica");
         String personagemDireita = PlayerPrefs.GetString ("PersonagemDireita", "");
@@ -205,7 +208,10 @@ public class Roteiro : MonoBehaviour {
             return;
         }
 
-        carregaScriptPosMudancaDeBackground ();
+        carregaMusica (musica);
+        carregaPersonagens (personagemDireita, personagemEsquerda);
+        verificaEscolhasECarregaOpcoes ();
+        modificadorDeTexto.mudaTextoASerExibido (scriptASerExibido.texto);
     }
 
     private void carregaButoes () {
@@ -227,8 +233,7 @@ public class Roteiro : MonoBehaviour {
             PlayerPrefs.SetInt ("Load", 0);
             loadingGame = true;
             loadGame ();
-        } 
-        else {
+        } else {
             loadingGame = false;
             idAtual = 1;
             carregaScript ();
@@ -238,17 +243,23 @@ public class Roteiro : MonoBehaviour {
     }
 
     private void gameOver () {
-        SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene ("GameOver");
     }
 
     private void verificaEPassaDeScript () {
-        if (Input.GetButtonDown ("Enter") && String.IsNullOrEmpty (scriptASerExibido.escolha[0]) && !modificadorDeBackground.mudandoBackground && !seletorDeEscolhas3.active && !seletorDeEscolhas2.active) {
+        if (Input.GetButtonDown ("Enter") && String.IsNullOrEmpty (scriptASerExibido.escolha[0]) && !modificadorDeBackground.mudandoBackground) {
             if (!String.IsNullOrEmpty (scriptASerExibido.gameOver)) {
                 gameOver ();
             }
 
             if (!modificadorDeTexto.mudandoTexto) {
-                this.idAtual++;
+                if (!String.IsNullOrEmpty (scriptASerExibido.puloDeCena)) {
+                    Debug.Log ("Pulando cena: " + scriptASerExibido.puloDeCena);
+                    this.idAtual = Int32.Parse(scriptASerExibido.puloDeCena);
+                } else {
+                    this.idAtual++;
+                    Debug.Log ("Indo pro id: " + idAtual);
+                }
                 this.carregaScript ();
             } else {
                 modificadorDeTexto.forcaTexto ();
